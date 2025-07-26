@@ -1,4 +1,6 @@
-A full-stack conversational AI web app powered by **React** and **Zustand** on the frontend, and **FastAPI**, **SQLAlchemy**, **MySQL**, and **Groq LLM** on the backend.
+
+# 🧠 AI Chat App – Full Stack (React + Zustand + FastAPI + MySQL + Groq LLM)
+## A full-stack conversational AI web app powered by **React** and **Zustand** on the frontend, and **FastAPI**, **SQLAlchemy**, **MySQL**, and **Groq LLM** on the backend.
 
 ---
 
