@@ -1,6 +1,15 @@
-# Full Stack application
+# Conversational AI System
 
-# Backend
-<img width="1867" height="925" alt="image" src="https://github.com/user-attachments/assets/903f5183-1f90-4cf4-b4e4-54d5e4f1230e" />
+## A full-stack project integrating a **FastAPI backend**, **MySQL database**, **Groq LLM API**, and a **React + Vite frontend** to support intelligent inventory management and conversational interfaces.
 
-# Frontend
+### 🚀 Features
+
+- ✅ Data ingestion from CSVs into MySQL
+- ✅ RESTful API using FastAPI for:
+  - `inventory`, `orders`, `users`, etc.
+- ✅ Modular API structure with routers
+- ✅ LLM integration via **Groq's API** for chat interaction
+- ✅ Frontend built using **React + Vite**
+- ✅ CORS support for frontend-backend interaction
+
+---
