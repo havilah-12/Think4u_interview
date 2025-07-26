@@ -1,0 +1,46 @@
+version: "3.9"
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: think4u_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  backend:
+    build: ./backend
+    container_name: fastapi_backend
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: mysql+pymysql://root:root@db:3306/think4u_db
+      GROQ_API_KEY: your_groq_api_key_here
+      CSV_FOLDER: /app/data
+    volumes:
+      - ./backend:/app
+      - ./data:/app/data
+    command: >
+      sh -c "sleep 10 &&
+             python load_data.py &&
+             uvicorn main:app --host 0.0.0.0 --port 8000 --reload"
+
+  # Optional frontend container (if needed)
+  # frontend:
+  #   build: ./frontend
+  #   container_name: react_frontend
+  #   ports:
+  #     - "5173:5173"
+  #   volumes:
+  #     - ./frontend:/app
+  #   command: npm run dev
+
+volumes:
+  mysql_data:
